@@ -1,0 +1,20 @@
+The Hitchhiker's Guide to the Galaxy,224,1979
+The Lord of the Rings,1178,1954
+Pride and Prejudice,279,1813
+1984,328,1949
+To Kill a Mockingbird,281,1960
+The Great Gatsby,180,1925
+Harry Potter and the Sorcerer's Stone,320,1997
+Moby Dick,635,1851
+War and Peace,1225,1869
+The Catcher in the Rye,234,1951
+Brave New World,268,1932
+The Hobbit,310,1937
+Fahrenheit 451,194,1953
+Jane Eyre,532,1847
+The Chronicles of Narnia: The Lion the Witch and the Wardrobe,206,1950
+Crime and Punishment,430,1866
+The Da Vinci Code,454,2003
+The Little Prince,96,1943
+Alice's Adventures in Wonderland,200,1865
+Don Quixote,863,1605
