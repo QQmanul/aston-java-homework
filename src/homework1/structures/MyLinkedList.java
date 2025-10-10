@@ -41,8 +41,9 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public void addAll(T[] values) {
-        if (values == null)
+        if (values == null) {
             return;
+        }
 
         for (T value : values) {
             add(value);
@@ -58,8 +59,10 @@ public class MyLinkedList<T> implements MyList<T> {
         Item<T> currentItem = firstItem;
 
         while (currentItem != null) {
-            if (currentItem.getValue().equals(value))
+            if (currentItem.getValue().equals(value)){
                 return currentItem;
+            }
+
             currentItem = currentItem.getNextItem();
         }
 
@@ -79,15 +82,19 @@ public class MyLinkedList<T> implements MyList<T> {
         Item<T> previous = itemFound.getPrevItem();
         Item<T> next = itemFound.getNextItem();
 
-        if (previous == null)
+        if (previous == null){
             firstItem = next;
-        else
+        }
+        else {
             previous.setNextItem(next);
+        }
 
-        if (next == null)
+        if (next == null) {
             lastItem = previous;
-        else
+        }
+        else {
             next.setPrevItem(previous);
+        }
 
         listCount--;
         return true;

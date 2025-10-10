@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.random.*;
 
 public class WorkingWithStudentCollections {
 
@@ -52,18 +53,17 @@ public class WorkingWithStudentCollections {
             }
         }
 
-        Optional<Book> result = students.stream()
+        students.stream()
                 .peek(System.out::println)
                 .map(Student::getBooks)
                 .flatMap(Collection::stream)
                 .distinct()
                 .filter(b -> b.getYear() > 2000)
                 .limit(3)
-                .findFirst();
-
-        result.ifPresentOrElse(
-                b -> System.out.println("Book with year > 2000: " + b),
-                () -> System.out.println("No book with year > 2000")
-        );
+                .findFirst()
+                .ifPresentOrElse(
+                        b -> System.out.println("Book with year > 2000: " + b),
+                        () -> System.out.println("No book with year > 2000")
+                );
     }
 }

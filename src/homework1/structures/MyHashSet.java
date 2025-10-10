@@ -2,13 +2,13 @@ package homework1.structures;
 
 import static java.util.Objects.hash;
 
-public class MyHashSet<T> implements MySet<T> {
+public class MyHashSet<E> implements MySet<E> {
     private static final int DEFAULT_BUCKETS_COUNT = 8;
     private static final double scale = 2;
 
     private int bucketsCount = DEFAULT_BUCKETS_COUNT;
     private int elementCount = 0;
-    private MyLinkedList<T>[] buckets = new MyLinkedList[DEFAULT_BUCKETS_COUNT];
+    private MyList<E>[] buckets = new MyLinkedList[DEFAULT_BUCKETS_COUNT];
 
     public MyHashSet() {
         for (int i = 0; i < buckets.length; i++) {
@@ -22,24 +22,24 @@ public class MyHashSet<T> implements MySet<T> {
     }
 
     @Override
-    public void remove(T value) {
+    public void remove(E value) {
         int bucketIdx = Math.abs(value.hashCode()) % bucketsCount;
-        MyLinkedList<T> bucket = buckets[bucketIdx];
+        MyLinkedList<E> bucket = buckets[bucketIdx];
 
         if (bucket.remove(value))
             elementCount--;
     }
 
     @Override
-    public boolean contains(T value) {
+    public boolean contains(E value) {
         int bucketIdx = Math.abs(value.hashCode()) % bucketsCount;
-        MyLinkedList<T> bucket = buckets[bucketIdx];
+        MyLinkedList<E> bucket = buckets[bucketIdx];
 
         return bucket.contains(value);
     }
 
     @Override
-    public void add(T value) {
+    public void add(E value) {
         if (!contains(value)) {
             if (elementCount == bucketsCount) {
                 resizeBuckets();
@@ -54,13 +54,13 @@ public class MyHashSet<T> implements MySet<T> {
     private void resizeBuckets() {
         int newBucketsCount = (int) (bucketsCount * scale);
 
-        MyLinkedList<T>[] newBuckets = new MyLinkedList[newBucketsCount];
+        MyLinkedList<E>[] newBuckets = new MyLinkedList[newBucketsCount];
         for (int i = 0; i < newBucketsCount; i++) {
             newBuckets[i] = new MyLinkedList<>();
         }
 
-        for (MyLinkedList<T> bucket : buckets) {
-            Item<T> item = bucket.getFirstItem();
+        for (MyLinkedList<E> bucket : buckets) {
+            Item<E> item = bucket.getFirstItem();
 
             while (item != null) {
                 int bucketIdx = Math.abs(item.getValue().hashCode()) % newBucketsCount;
