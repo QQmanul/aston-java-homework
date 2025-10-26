@@ -1,4 +1,4 @@
-package homework1.structures;
+package ru.aston.homework1.structures;
 
 public class Item<V> {
     private V value;

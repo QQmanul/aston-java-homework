@@ -1,6 +1,4 @@
-package homework1.structures;
-
-import static java.util.Objects.hash;
+package ru.aston.homework1.structures;
 
 public class MyHashSet<E> implements MySet<E> {
     private static final int DEFAULT_BUCKETS_COUNT = 8;
@@ -8,7 +6,7 @@ public class MyHashSet<E> implements MySet<E> {
 
     private int bucketsCount = DEFAULT_BUCKETS_COUNT;
     private int elementCount = 0;
-    private MyList<E>[] buckets = new MyLinkedList[DEFAULT_BUCKETS_COUNT];
+    private MyLinkedList<E>[] buckets = new MyLinkedList[DEFAULT_BUCKETS_COUNT];
 
     public MyHashSet() {
         for (int i = 0; i < buckets.length; i++) {

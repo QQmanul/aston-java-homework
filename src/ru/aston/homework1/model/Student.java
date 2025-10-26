@@ -1,4 +1,4 @@
-package homework1.model;
+package ru.aston.homework1.model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,13 +1,12 @@
-package homework1;
+package ru.aston.homework1;
 
-import homework1.model.Book;
-import homework1.model.Student;
+import ru.aston.homework1.model.Book;
+import ru.aston.homework1.model.Student;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
-import java.util.random.*;
 
 public class WorkingWithStudentCollections {
 
