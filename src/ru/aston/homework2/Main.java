@@ -42,7 +42,11 @@ public class Main {
 
     }
 
+    @org.jetbrains.annotations.NotNull
     private static String getUserInput(Scanner scanner) {
+        if (scanner == null) {
+            throw new NullPointerException();
+        }
         return scanner.nextLine().trim();
     }
 
